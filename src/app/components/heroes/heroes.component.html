@@ -1,0 +1,16 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+            <span class="badge">{{hero.id}}</span>
+            <span class="name">{{hero.name}}</span>
+        </button>
+    </li>
+</ul>
+
+<!-- input -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+<!-- <li>	호스트 엘리먼트
+    heroes	HeroComponent 클래스에서 히어로 목록을 담는 프로퍼티입니다.
+    hero	목록을 순회할 때마다 할당되는 히어로 객체입니다. -->
