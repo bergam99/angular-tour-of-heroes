@@ -1,4 +1,15 @@
-<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button type="button" class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+  </li>
+</ul>
+
+<!-- *** onSelect *** -->
+<!-- <h2>My Heroes</h2>
 <ul class="heroes">
     <li *ngFor="let hero of heroes">
         <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
@@ -6,10 +17,12 @@
             <span class="name">{{hero.name}}</span>
         </button>
     </li>
-</ul>
+</ul> -->
+
+
 
 <!-- input -->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
 
 <!-- <li>	호스트 엘리먼트
     heroes	HeroComponent 클래스에서 히어로 목록을 담는 프로퍼티입니다.

@@ -1,12 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 
 const routes: Routes = [
   {
+    // 브라우저의 URL이 빈 문자열일 때 '/dashboard' 주소로 이동하도록 설정한 것입니다.
+    path:'',
+    redirectTo:'/dashboard',
+    pathMatch:'full'
+  },
+  {
+    path:'dashboard',
+    component:DashboardComponent
+  },
+  {
+    path:'detail/:id',
+    component:HeroDetailComponent
+  },
+  {
     path:'heroes',
     component:HeroesComponent
-  }
+  },
 ];
 
 @NgModule({
